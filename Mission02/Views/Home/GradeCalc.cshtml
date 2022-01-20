@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Grade Calculator";
+}
+
+@model GradeCalcModel
+
+<div class="container">
+    <h3>Grade Calculator</h3>
+    <form method="post" id="myForm">
+        <div class="input-group row">
+            <div class="col-6">
+                <label class="input-group-text" for="assign">Assignments:</label>
+                <input class="form-control" id="assign" asp-for="Assign" type="number" min="0" max="100" />
+            </div>
+            <div class="col-6"></div>
+            <div class="col-6">
+                <label class="input-group-text" for="group">Group Project:</label>
+                <input class="form-control" id="group" asp-for="Group" type="number" min="0" max="100" />
+            </div>
+            <div class="col-6"></div>
+            <div class="col-6">
+                <label class="input-group-text" for="quiz">Quizzes:</label>
+                <input class="form-control" id="quiz" asp-for="Quiz" type="number" min="0" max="100" />
+            </div>
+            <div class="col-6"></div>
+            <div class="col-6">
+                <label class="input-group-text" for="exam">Exams:</label>
+                <input class="form-control" id="exam" asp-for="Exam" type="number" min="0" max="100" />
+            </div>
+            <div class="col-6"></div>
+            <div class="col-6">
+                <label class="input-group-text" for="intex">INTEX:</label>
+                <input class="form-control" id="intex" asp-for="Intex" type="number" min="0" max="100" />
+            </div>
+            <input type="hidden" id="Final" asp-for="Final" value="0" />
+            <div class="col-6"></div>
+            <div class="col-1"></div>
+            <input class="btn btn-primary col-4" type="submit" value="Calculate" id="calculate" />
+        </div>
+    </form>
+
+    <div asp-validation-summary="All"></div>
+
+    <h3 style="display: inline">Final Grade: </h3>
+    <h2 style="color: #116A30; display: inline " id="per"></h2>
+
+    <script src="~/js/Calculator.js"></script>
+</div>
